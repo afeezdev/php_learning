@@ -1,7 +1,3 @@
-<?php
-    include_once './includes/dbh.inc.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +18,5 @@
     <br>
     <button type="submit" name="submit">Sign Up</button>
 </form>
-<?php
-echo '<hr> PREPARED STATEMENT ';
-
-?>
-    
 </body>
 </html>
