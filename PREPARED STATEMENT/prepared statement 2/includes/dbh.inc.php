@@ -1,13 +1,5 @@
 <?php
-
-
-
-$dbServername ="localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName ="log_in_system";
-
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+$conn = mysqli_connect("localhost", "root", "", "log_in_system");
 
     $sql = "SELECT * FROM users WHERE user_uid ='Admin';";
     $result = mysqli_query($conn, $sql);

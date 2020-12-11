@@ -8,6 +8,8 @@
     <h2>Sign Up</h2>
     <form action="./includes/signup.inc.php" method="POST">
         <?php
+
+        // Another method that would not clear the entire input fields when there is error
             if (isset($_GET['first'])) {
                 $first = $_GET['first'];
                 echo '<input type="text" name="first" placeholder="Firstname" value="'.$first.'"> <br>';
@@ -40,7 +42,7 @@
     </form>
     <?php
 
-        $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        // $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         // // $fullUrl = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         // // $fullUrl = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
@@ -60,7 +62,6 @@
         //     exit();
         // }
 
-        // Another method that would clear the entire input fields when there is error
         if (!isset($_GET['signup'])) {
             exit();
         } else {

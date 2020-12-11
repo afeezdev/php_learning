@@ -11,12 +11,7 @@
 
 $data ="Admin";
 
-$dbServername ="localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName ="log_in_system";
-
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+$conn = mysqli_connect("localhost", "root", "", "log_in_system");
 
     //Created a template
     $sql = "SELECT * FROM users WHERE user_uid =?;";
