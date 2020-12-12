@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d1bfbf;
+}
+
+p{
+    font-family: arial;
+    font-size: 16px;
+    color: #272727;
+    padding: 10px 10px 0;
+}
+
+.user-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    vertical-align: middle;
+}
+
+.p-title {
+    padding-top: 20px;
+}

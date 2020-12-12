@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <?php
     $sql = "SELECT * FROM user";
@@ -19,9 +20,9 @@
             $sqlImage = "SELECT * FROM profile_Image WHERE userid ='$id'";
             $resultImage = mysqli_query($conn, $sqlImage);
             while ($rowImage = mysqli_fetch_assoc($resultImage)) {
-                echo "<div class=''>";
+                echo "<div class='user-container'>";
                     if ($rowImage['status'] == 0 ) {
-                        echo "<img src='uploads/profile".$id.".jpg' > ";
+                        echo "<img src='uploads/profile".$id.".jpg?".mt_rand()."' > ";
                     } else {
                         if ($rowImage['gender'] == 'male' ) {
                             echo "<img src='uploads/profileDefaultMale.jpg' > ";
@@ -29,7 +30,9 @@
                             echo "<img src='uploads/profileDefaultFemale.jpg' > ";
                         }
                     }
-                echo $row['username'];
+                echo "<p>".$row['username']."</p>";
+                echo "<p>".$row['first']." ". $row['last']."</p> <br><br>";
+                
                 echo "</div>";
             }
             
@@ -41,12 +44,14 @@
 
     if (isset($_SESSION['id'])) {
         if($_SESSION['id'] ==1 ) {
-            echo "You are logged in as user #1";
+            echo "You are logged in as user Admin <br><br>";
         }
         echo "<form action='upload.php' method='post' enctype='multipart/form-data'>
                 <input type='file' name='file'>
                 <button type='submit' name='submit'>UPLOAD</button>
               </form>";
+        
+        
     } else {
         echo "You are not logged in!";
         echo "<form action='signup.php' method='POST'>
